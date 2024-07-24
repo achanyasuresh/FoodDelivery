@@ -1,0 +1,61 @@
+.header{
+    height: 25vw;
+    margin: -30px;
+    background: url('abc.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+.header-contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+.header-contents h2{
+    font-weight: 500;
+    color: black;
+    font-size: max(4.5vw, 22px);
+}
+.header-contents p{
+    color: black;
+    font-size: 1vw;
+}
+.header-contents button{
+    border: none;
+    color: #747474;
+    font-size:  1vw 2.3vw; /* Combines the two values into a responsive size */
+    background-color: rgb(222, 213, 213);
+    padding: 10px 20px; /* Adds padding to the button */
+    border-radius: 5px; /* Rounds the corners */
+    text-align: center; /* Centers the text inside the button */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: background-color 0.3s, color 0.3s;
+}
+@media (max-width:1050px){
+    
+   .header{
+   height: 38vw; 
+   }
+   .header-contents{
+    max-width: 45%;
+   }
+   
+}
+@media (max-width:750px){
+    
+    .header-contents{
+     max-width: 55%;
+    }
+    .header-contents p{
+        display: none;
+    }
+    .header-contents button{
+        padding: 2vw 4vw;
+    }
+    
+ }
