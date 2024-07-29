@@ -6,12 +6,13 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 
 const FoodItem = ({ id, name, description, price, image }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(storeContext);
-
+  const { cartItems, addToCart, removeFromCart,url } = useContext(storeContext);
+  const imageUrl = `${url}/images/${image}`;
+  console.log('Image URL:', imageUrl);
   return (
     <div className='food-item'>
       <div className="food-item-imagecontainer">
-        <img className='food-item-image' src={image} alt={name} />
+        <img className='food-item-image' src={url+"/images/"+image} alt="" />
         {!cartItems[id] ? (
           <AddCircleOutlineOutlinedIcon
             className='add'

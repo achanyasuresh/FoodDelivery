@@ -3,12 +3,21 @@ import './Navbar.css'
 import { assets } from '../../assets/assets'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { storeContext } from '../../data/storeContext';
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 const Navbar = ({setShowLogin}) => {
+  const navigate = useNavigate();
   const [menu,setMenu] = useState("menu");
-  const {getTotalCartAmount} = useContext(storeContext)
+  const {getTotalCartAmount,token,setToken} = useContext(storeContext);
+const logout = () =>{
+  localStorage.removeItem("token");
+  setToken("")
+  navigate("/");
+
+}
   return (
     <div className='navbar'>
       <Link to='/'>
@@ -29,7 +38,20 @@ const Navbar = ({setShowLogin}) => {
          </Link>
           <div className={getTotalCartAmount()===0?":":"dot"}></div>
         </div>
-        <button onClick={()=>setShowLogin(true)}>Sign in</button>
+        {!token?  <button onClick={()=>setShowLogin(true)}>Sign in</button> 
+        :
+        <div className='navbar-profile'>
+             < AccountCircleIcon className='profile'  />
+             <ul className="nav-profile-dropdown">
+              <li><ShoppingBagOutlinedIcon className='bag-icon' /><p>Orders</p></li>
+              <hr />
+              <li onClick={logout}><LogoutOutlinedIcon className='logout-icon' /><p>Logout</p></li>
+              <hr />
+             </ul>
+
+          </div>
+        }
+       
         
       </div>
     </div>
