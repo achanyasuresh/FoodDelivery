@@ -11,6 +11,8 @@ import ten from './10.jpeg'
 import logo from './logo.webp'
 import logo1 from './log.png'
 import cart from './cart.png'
+import unchecked from "./un_checked.png"
+import checked from "./checked.png"
 
 
 export const assets = {
@@ -26,7 +28,9 @@ export const assets = {
     ten,
     logo, 
     logo1,
-    cart
+    cart,
+    unchecked,
+    checked
 }
 
 export const menu_list = [

@@ -18,6 +18,10 @@ const logout = () =>{
   navigate("/");
 
 }
+
+const myOrder = () => {
+  navigate("/myorders");
+}
   return (
     <div className='navbar'>
       <Link to='/'>
@@ -43,7 +47,7 @@ const logout = () =>{
         <div className='navbar-profile'>
              < AccountCircleIcon className='profile'  />
              <ul className="nav-profile-dropdown">
-              <li><ShoppingBagOutlinedIcon className='bag-icon' /><p>Orders</p></li>
+              <li onClick={myOrder}><ShoppingBagOutlinedIcon className='bag-icon' /><p>Orders</p></li>
               <hr />
               <li onClick={logout}><LogoutOutlinedIcon className='logout-icon' /><p>Logout</p></li>
               <hr />
