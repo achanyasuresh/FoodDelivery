@@ -1,14 +1,41 @@
-.food-display{
+.food-display {
     margin-top: 30px;
 }
-.food-display h2{
+
+.food-display h2 {
     font-size: max(2vw, 24px);
     font-weight: 600;
 }
-.food-display-list{
+
+.food-display-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
     margin-top: 30px;
     gap: 30px;
     row-gap: 50px;
+}
+
+/* Centering the no-food message */
+.no-food-message {
+    display: flex;
+    margin-left: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Space above the message */
+    font-size: 24px; /* Font size */
+    color: #555; /* Color */
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 0.5s forwards; /* Animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to final position */
+    }
 }

@@ -8,6 +8,9 @@ import seven from './7.jpeg'
 import eight from './8.jpeg'
 import nine from './9.jpeg'
 import ten from './10.jpeg'
+import eleven from "./11.jpeg"
+import roles from './roles.jpg'
+import salad from './salad.jpg'
 import logo from './logo.webp'
 import logo1 from './log.png'
 import cart from './cart.png'
@@ -26,51 +29,53 @@ export const assets = {
     eight,
     nine,
     ten,
+    eleven,
     logo, 
     logo1,
     cart,
     unchecked,
-    checked
+    checked,
+    roles,
+    salad
 }
 
 export const menu_list = [
     {
         menu_name: "Salad",
-        manu_image: one
+        manu_image: salad
     },
     {
-        menu_name: "Rolls",
+        menu_name: "Sandwich",
         manu_image: two
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Desert",
+        manu_image: eight
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Rolls",
+        manu_image: roles
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Cake",
+        manu_image: five
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Veg",
+        manu_image: nine
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Pasta",
+        manu_image: eleven
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Noodeles",
+        manu_image: four
     },
-    {
-        menu_name: "Deserts",
-        manu_image: three
-    },
-
+    
+    
+    
+    
 ]
 
 export const food_list = [

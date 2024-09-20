@@ -25,6 +25,7 @@ const FoodDisplay = ({ category }) => {
             />
           ))
         }
+        <br />
       </div>
     </div>
   );
