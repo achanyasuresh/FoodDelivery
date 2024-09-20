@@ -1,70 +1,165 @@
-.place-order{
+.place-order {
     display: flex;
-    align-items: start;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 50px;
-    margin-top: 100px;
+    gap: 40px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
-.place-order-left{
+
+.place-order-left,
+.place-order-right {
     width: 100%;
-    max-width: max(30%,500px);
+    max-width: 480px;
 }
-.place-order-left .title{
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 50px;
+
+.place-order-left .title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
 }
-.place-order-left input{
-    margin-bottom: 15px;
+
+.place-order-left input {
+    margin-bottom: 10px;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #c5c5c5;
-    border-radius: 4px;
-    outline-color: aquamarine;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
-.place-order-left .multi-fields{
+
+.place-order-left input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+    outline: none;
+}
+
+.place-order-left .multi-field {
     display: flex;
     gap: 10px;
 }
-.place-order-right{
-    width: 100%;
-    max-width: max(40%,500px);
-}
-.place-order-submit{
-    margin-top: 50px;
-    border: none;
-    background-color: rgb(23, 23, 231);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.payment{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 15px;
-}
-.payment h2{
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-.payment .payment-option{
-    display: flex;
-    align-items: center;
-    gap: 10px ;
-    border: 1px solid #4e4eed;
-    padding: 15px;
-    border-radius: 4px;
-    min-width: 300px;
-    cursor: pointer;
-}
-.payment .payment-option:hover{
-    background-color:  rgb(84, 84, 238);
+
+.place-order-right {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width:700px) {
-    .place-order{
+.cart-total {
+    margin-bottom: 35px;
+}
+
+.cart-total h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.cart-total-details p {
+    margin: 0;
+    color: #555;
+}
+
+.cart-total-details b {
+    font-weight: 700;
+    color: #007bff;
+}
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.payment .payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.payment .payment-option img {
+    width: 24px;
+    height: 24px;
+}
+
+.payment .payment-option p {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.payment .payment-option:hover,
+.payment .payment-option.selected {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.place-order-submit {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.place-order-submit:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+    .place-order {
         flex-direction: column;
+    }
+
+    .place-order-left,
+    .place-order-right {
+        max-width: 100%;
+    }
+
+    .place-order-left input {
+        margin-bottom: 12px;
     }
 }

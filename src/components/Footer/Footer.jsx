@@ -14,9 +14,9 @@ const Footer = () => {
                         High-quality food delivery services with a focus on freshness and customer satisfaction.
                     </p>
                     <div className='footer-social-icons'>
-                        <FacebookOutlinedIcon />
-                        <TwitterIcon />
-                        <LinkedInIcon />
+                        <FacebookOutlinedIcon data-testid="facebook-icon" />
+                        <TwitterIcon data-testid="twitter-icon" />
+                        <LinkedInIcon data-testid="linkedin-icon" />
                     </div>
                 </div>
                 <div className="footer-center">
