@@ -94,10 +94,14 @@ const PlaceOrder = () => {
         if (payment === "stripe") {
             let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
             if (response.data.success) {
-                const { session_url } = response.data;
-                window.location.replace(session_url);
+                // const { session_url } = response.data;
+                // window.location.replace(session_url);
+                navigate("/myorders");
+
             } else {
-                alert("Something Went Wrong");
+                alert("Something Went Wrong", response.data);
+                console.log("error", response)
+               
             }
         } else {
             let response = await axios.post(url + "/api/order/placecod", orderData, { headers: { token } });
@@ -106,7 +110,7 @@ const PlaceOrder = () => {
                 alert(response.data.message);
                 setCartItems({});
             } else {
-                alert("Something Went Wrong");
+                alert("Something Went Wrong", response.data);
             }
         }
     };
