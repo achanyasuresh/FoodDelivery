@@ -94,9 +94,8 @@ const PlaceOrder = () => {
         if (payment === "stripe") {
             let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
             if (response.data.success) {
-                // const { session_url } = response.data;
-                // window.location.replace(session_url);
-                navigate("/myorders");
+                const { session_url } = response.data;
+                window.location.replace(session_url);
 
             } else {
                 alert("Something Went Wrong", response.data);
