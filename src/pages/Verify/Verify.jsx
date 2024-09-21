@@ -13,13 +13,20 @@ const Verify = () => {
   const navigate = useNavigate();
 
   const verifyPayment = async () => {
+    try {
     const response = await axios.post(url + "/api/order/verify", { success, orderId });
     if (response.data.success) {
-      navigate("/myorders");
+      console.log("dataaaaaaaa", response)
+      navigate("/");
     }
     else {
-      navigate("/")
+      console.log("Payment not verified:", response.data);
+      navigate("/"); 
     }
+  } catch (error) {
+    console.error("Error verifying payment:", error);
+    navigate("/"); // Optionally handle error
+}
   }
 
   useEffect(() => {
