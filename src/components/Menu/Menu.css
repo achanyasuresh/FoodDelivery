@@ -1,18 +1,26 @@
-.menu{
+.menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-top: 50px;
+    padding: 0 20px;
 }
-.menu h1{
+
+.menu h1 {
     color: #262626;
     font-weight: 500;
+    font-size: max(2.5vw, 24px); /* Adjust heading size for smaller screens */
 }
-.menu-text{
+
+.menu-text {
     max-width: 60%;
     color: #808080;
+    font-size: max(1.2vw, 14px); /* Adjust text size responsively */
+    margin: 0 auto;
+    text-align: center;
 }
-.menu-list{
+
+.menu-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,38 +29,82 @@
     margin: 20px 0px;
     overflow-x: scroll;
 }
-.menu-list::-webkit-scrollbar{
+
+.menu-list::-webkit-scrollbar {
     display: none;
 }
-.menu-list-item img{
+
+.menu-list-item img {
     width: 7.5vw;
     min-width: 80px;
     cursor: pointer;
     border-radius: 50%;
     transition: 0.2s;
 }
-.menu-list-item p{
+
+.menu-list-item p {
     margin-top: 10px;
     color: #747474;
     font-size: max(1.4vw, 16px);
     cursor: pointer;
 }
-.menu hr{
+
+.menu hr {
     margin: 10px 0px;
     height: 2px;
-    background-color: #e2e2e2e2;
+    background-color: #e2e2e2;
     border: none;
 }
-.menu-list-item .active{
+
+.menu-list-item .active {
     border: 4px solid rgb(18, 57, 99);
     padding: 2px;
 }
-@media (max-width:1050px){
-    
-    .menu-text{
-       max-width: 100%;
-       font-size: 14px;
+
+@media (max-width: 1050px) {
+    .menu-text {
+        max-width: 100%;
+        font-size: 14px;
     }
-   
+    .menu-list {
+        gap: 20px; /* Reduce gap between items */
+    }
 }
 
+@media (max-width: 768px) {
+    .menu h1 {
+        font-size: max(5vw, 20px); /* Further adjust for tablet/small screens */
+    }
+
+    .menu-list-item img {
+        width: 10vw; /* Adjust image size */
+        min-width: 60px;
+    }
+
+    .menu-list-item p {
+        font-size: max(2vw, 14px); /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        gap: 10px; /* Reduce gaps on small screens */
+    }
+
+    .menu h1 {
+        font-size: 18px; /* Smaller heading for mobile */
+    }
+
+    .menu-list-item img {
+        width: 15vw; /* Larger images for mobile */
+        min-width: 50px;
+    }
+
+    .menu-list-item p {
+        font-size: 12px; /* Smaller text for mobile */
+    }
+
+    .menu hr {
+        margin: 5px 0;
+    }
+}

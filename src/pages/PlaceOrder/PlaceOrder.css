@@ -4,11 +4,13 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
-    margin-top: 40px;
+    margin: 100px auto; /* Center the form */
     padding: 20px;
     background-color: #fafafa;
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    max-width: 1200px; /* Limit width for larger screens */
+    position: relative; /* For footer positioning */
 }
 
 .place-order-left,
@@ -162,4 +164,9 @@
     .place-order-left input {
         margin-bottom: 12px;
     }
+}
+
+/* Added footer margin */
+.footer {
+    margin-top: 50px; /* Adjust according to your footer height */
 }

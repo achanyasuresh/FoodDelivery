@@ -1,5 +1,5 @@
 .cart{
-    margin-top: 100px;
+    margin-top: 200px;
 
 }
 .cart-items-title {
@@ -85,6 +85,15 @@
     color: white;
     border-radius: 4px;
 }
+.empty-cart-message {
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000; /* Change to your preferred color */
+    margin-top: 20px;
+  }
+
+  
+  
 @media(max-width:750px){
     .cart-bottom{
         flex-direction: column-reverse;

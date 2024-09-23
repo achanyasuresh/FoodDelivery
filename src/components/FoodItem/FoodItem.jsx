@@ -10,45 +10,39 @@ const FoodItem = ({ id, name, description, price, image }) => {
   const imageUrl = `${url}/images/${image}`;
   return (
     <div className='food-item'>
-      <div className="food-item-imagecontainer">
-        <img 
-          className='food-item-image' 
-          src={imageUrl} 
-          alt={name} 
-          data-testid="food-item-image"
-        />
-        {!cartItems[id] ? (
-          <AddCircleOutlineOutlinedIcon
+   <div className="food-item-imagecontainer">
+    <img 
+        className='food-item-image' 
+        src={imageUrl} 
+        alt={name} 
+        data-testid="food-item-image"
+    />
+    {!cartItems[id] ? (
+        <AddCircleOutlineOutlinedIcon
             className='add'
             onClick={() => addToCart(id)}
             style={{ color: 'green', cursor: 'pointer' }}
             data-testid="add-icon"
-          />
-        ) : (
-          <div className="food-item-counter">
+        />
+    ) : (
+        <div className="food-item-counter"> {/* This container holds the buttons */}
             <RemoveCircleOutlineOutlinedIcon
-              onClick={() => removeFromCart(id)}
-              style={{ color: 'red', cursor: 'pointer' }}
-              data-testid="remove-icon"
+                onClick={() => removeFromCart(id)}
+                style={{ color: 'red', cursor: 'pointer' }}
+                data-testid="remove-icon"
             />
             <p>{cartItems[id]}</p>
             <AddCircleOutlineOutlinedIcon
-              onClick={() => addToCart(id)}
-              style={{ color: 'green', cursor: 'pointer' }}
-              data-testid="add-icon"
+                onClick={() => addToCart(id)}
+                style={{ color: 'green', cursor: 'pointer' }}
+                data-testid="add-icon"
             />
-          </div>
-        )}
-      </div>
-      <div className="food-item-info">
-        <div className="food-item-name-rating">
-          <p data-testid="food-item-name">{name}</p>
-          <img 
-            src={assets.rating} 
-            alt='rating' 
-            data-testid="food-item-rating"
-          />
         </div>
+    )}
+</div>
+
+      <div className="food-item-info">
+        
         <p className='food-item-desc' data-testid="food-item-desc">{description}</p>
         <p className="food-item-price" data-testid="food-item-price">${price}</p>
       </div>

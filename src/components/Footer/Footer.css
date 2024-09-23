@@ -4,33 +4,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 20px 8vw;
-    padding-top: 80px;
+    gap: 5px; /* Gap between items */
+    padding: 10px 2vw; /* General padding */
+    padding-top: 20px; /* Padding at the top */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 .footer-content {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: repeat(3, 1fr); /* Flexibly divide into 3 columns */
+    gap: 20px; /* Gap between columns */
 }
 
 .footer-left, .footer-right, .footer-center {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 20px;
+    align-items: flex-start; /* Fixed alignment to start */
+    gap: 5px; /* Gap between items in columns */
 }
 
 .footer-social-icons {
     display: flex;
-    gap: 10px;
+    gap: 3px; /* Gap between icons */
 }
 
 .footer-social-icons svg {
     color: #d9d9d9;
     cursor: pointer;
+    font-size: 18px; /* Icon size */
 }
 
 .footer-center ul, .footer-right ul {
@@ -39,21 +44,58 @@
 }
 
 .footer-center li, .footer-right li {
-    margin: 5px 0;
+    margin: 2px 0; /* Spacing between list items */
+}
+
+.footer-left h2, .footer-center h2, .footer-right h2 {
+    font-size: 16px; /* Font size of section headers */
+}
+
+.footer p, .footer li {
+    font-size: 12px; /* Font size for paragraphs and list items */
 }
 
 .footer-copyright {
-    margin-top: 20px;
-    font-size: 14px;
+    margin-top: 5px; /* Margin for copyright */
+    font-size: 10px; /* Font size for copyright */
     color: #d9d9d9;
 }
-@media (max-width:750px){
-    .footer-content{
+
+/* Responsive Styles */
+@media (max-width: 750px) {
+    .footer-content {
         display: flex;
-        flex-direction: column;
-        gap: 35px;
+        flex-direction: column; /* Stack columns vertically */
+        gap: 10px; /* Adjusted gap */
     }
-    .footer-copyright{
-        text-align: center;
+
+    .footer-left, .footer-right, .footer-center {
+        align-items: center; /* Center align for smaller screens */
+    }
+
+    .footer-social-icons {
+        justify-content: center; /* Center social icons */
+    }
+
+    .footer-copyright {
+        text-align: center; /* Center align copyright text */
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        padding: 10px 1vw; /* Less padding on very small screens */
+    }
+
+    .footer-left h2, .footer-center h2, .footer-right h2 {
+        font-size: 14px; /* Smaller header font size */
+    }
+
+    .footer p, .footer li {
+        font-size: 10px; /* Smaller font for paragraphs and list items */
+    }
+
+    .footer-copyright {
+        font-size: 8px; /* Smaller copyright font size */
     }
 }

@@ -4,6 +4,9 @@
     background: url('abc.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
+    margin-top: 100px;
+    position: relative; /* Ensure that z-index works */
+    z-index: 1; 
 }
 .header-contents{
     position: absolute;

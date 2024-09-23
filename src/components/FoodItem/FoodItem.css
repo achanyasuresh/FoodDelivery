@@ -1,64 +1,150 @@
-.food-item{
-width: 100%;
-margin: auto;
-border-radius: 15px;
-box-shadow: 0px 0px 10px #00000015;
-transition: 0.3s;
-animation: fadeIn 1s;
-}
-.food-item-imagecontainer{
-    position: relative;
-}
-.food-item-imagecontainer .add{
-    width: 35px;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-.food-item-counter{
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
+.food-item {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
-    padding: 6px;
-    border-radius: 50px;
-    background-color: white;
-
-}
-.food-item-image{
-    width: 100%;
-    border-radius: 15px 15px 0px 0px;
-}
-.food-item-info{
+    border: 1px solid #e2e2e2;
     padding: 20px;
-
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    transition: 0.3s;
+    animation: fadeIn 1s;
 }
-.food-item-name-rating{
+
+.food-item-imagecontainer {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Makes the container a square */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.food-item-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the container and stays proportional */
+    border-radius: 10px;
+}
+
+.food-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.food-item-name-rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
-.food-item-name-rating p{
+
+.food-item-name-rating p {
     font-size: 20px;
     font-weight: 500;
 }
-.food-item-name-rating img{
+
+.food-item-name-rating img {
     width: 70px;
 }
-.food-item-desc{
-    color: #67676767;
-    font-size: 12px;
 
+.food-item-desc {
+    color: #676767;
+    font-size: 14px; /* Increased for readability */
+    line-height: 1.5; /* Increased line height for better spacing */
+    text-align: left;
 }
-.food-item-price{
-    color: rgb(18, 57, 99);
-    font-size: 22px;
-    font-weight: 500;
-    margin: 10px 0px;
 
+.food-item-price {
+    color: rgb(18, 57, 99);
+    font-size: 24px; /* Increased for emphasis */
+    font-weight: 600; /* Made it bolder for better visibility */
+    margin: 5px 0; /* Reduced margin for tighter layout */
+    text-align: left;
+}
+
+/* Add/remove buttons styling */
+.add, .remove {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add:hover, .remove:hover {
+    transform: scale(1.1);
+}
+.food-item-counter {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center the icons and text vertically */
+    gap: 10px;
+    margin-left: 60px; /* Space between the items */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .food-item {
+        padding: 15px; /* Adjust padding for medium screens */
+    }
+
+    .food-item-name-rating p {
+        font-size: 18px; /* Slightly reduce font size */
+    }
+}
+
+@media (max-width: 992px) {
+    .food-item {
+        width: 90%; /* Allow more width on smaller screens */
+        margin: 10px auto; /* Add margin for spacing */
+    }
+
+    .food-item-name-rating img {
+        width: 50px; /* Reduce image size */
+    }
+
+    .food-item-desc {
+        font-size: 12px; /* Smaller font for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .food-item {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .food-item-name-rating {
+        flex-direction: column; /* Stack name and rating */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .food-item-price {
+        font-size: 20px; /* Adjust price font size */
+    }
+
+    .food-item-imagecontainer {
+        padding-top: 75%; /* Adjust square ratio */
+    }
+}
+
+@media (max-width: 576px) {
+    .food-item {
+        padding: 10px; /* Less padding for small screens */
+    }
+
+    .food-item-name-rating p {
+        font-size: 16px; /* Further reduce font size */
+    }
+
+    .add, .remove {
+        font-size: 24px; /* Adjust button sizes */
+    }
+
+    .food-item-counter {
+        padding: 4px; /* Smaller padding */
+    }
 }

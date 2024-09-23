@@ -1,14 +1,18 @@
-.login{
-    position: absolute;
-    z-index: 1;
+.login {
+    position: fixed; /* Keep this as fixed */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: #00000090;
-    display: grid;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Higher z-index to ensure it appears on top */
 }
-.login-container{
-    place-self: center;
-    width: max(23vw,330px);
+
+.login-container {
+    width: max(23vw, 330px);
     color: #808080;
     background-color: white;
     display: flex;
@@ -18,46 +22,97 @@
     border-radius: 8px;
     font-size: 14px;
     animation: fadeIn 0.5s;
-
 }
-.login-title{
+
+
+.login-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
 }
-.login-inputs{
+
+.login-inputs {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.login-inputs input{
+
+.login-inputs input {
     outline: none;
     border: 1px solid #c9c9c9;
     padding: 10px;
     border-radius: 4px;
 }
-.login-container button{
+
+.login-container button {
     border: none;
     padding: 10px;
     border-radius: 4px;
     color: white;
     background-color: rgb(18, 57, 99);
     font-size: 15px;
-    font-size: 15px;
     cursor: pointer;
 }
-.login-condition{
+
+.login-condition {
     display: flex;
     align-items: start;
     gap: 8px;
     margin-top: -15px;
 }
-.login-condition input{
+
+.login-condition input {
     margin-top: 5px;
 }
-.login p span{
+
+.login p span {
     color: rgb(39, 8, 2);
     font-weight: 500;
     cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 750px) {
+    .login-container {
+        width: 90%; /* Use more width on smaller screens */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .login-title {
+        font-size: 16px; /* Slightly increase title font size */
+    }
+
+    .login-inputs input {
+        padding: 12px; /* Increase input padding for better touch targets */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .login-container button {
+        padding: 12px; /* Increase button padding */
+        font-size: 16px; /* Adjust button font size */
+    }
+
+    .login-condition {
+        gap: 5px; /* Reduce gap between condition items */
+    }
+}
+
+@media (max-width: 500px) {
+    .login-container {
+        width: 95%; /* Take even more width on very small screens */
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .login-title {
+        font-size: 14px; /* Adjust title font size */
+    }
+
+    .login-inputs input {
+        padding: 10px; /* Standardize input padding */
+    }
+
+    .login-container button {
+        padding: 10px; /* Standardize button padding */
+    }
 }

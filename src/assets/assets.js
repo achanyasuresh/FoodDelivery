@@ -13,6 +13,10 @@ import logo1 from './log.png'
 import cart from './cart.png'
 import unchecked from "./un_checked.png"
 import checked from "./checked.png"
+import salad from "./salad.jpeg"
+import rolls from "./rolls.jpeg"
+import dessert from "./dessert1.jpeg"
+import crispyburger from "./crispyburger.jpeg"
 
 
 export const assets = {
@@ -30,46 +34,32 @@ export const assets = {
     logo1,
     cart,
     unchecked,
-    checked
+    checked,
+    salad,
+    rolls,
+    dessert,
+    crispyburger
 }
 
 export const menu_list = [
     {
         menu_name: "Salad",
-        manu_image: one
+        manu_image: salad
     },
     {
         menu_name: "Rolls",
-        manu_image: two
+        manu_image: rolls
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Desert",
+        manu_image: dessert
     },
     {
-        menu_name: "Deserts",
-        manu_image: three
+        menu_name: "Burgers",
+        manu_image: crispyburger
     },
-    {
-        menu_name: "Deserts",
-        manu_image: three
-    },
-    {
-        menu_name: "Deserts",
-        manu_image: three
-    },
-    {
-        menu_name: "Deserts",
-        manu_image: three
-    },
-    {
-        menu_name: "Deserts",
-        manu_image: three
-    },
-    {
-        menu_name: "Deserts",
-        manu_image: three
-    },
+   
+    
 
 ]
 
